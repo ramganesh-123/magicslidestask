@@ -30,7 +30,8 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Stack(
         children: [
           Positioned(
-            top: 570.h,
+            left: 0,
+            bottom: -50.h,
             child: AnimatedRotation(
               turns: _turns,
               duration: const Duration(milliseconds: 500),
@@ -47,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           Positioned(
-            top: 530.h,
+            bottom: 50.h,
             right: 0,
             child: AnimatedRotation(
               turns: _turns,
@@ -105,6 +106,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     maxLines: 1,
                     maxLength: 10,
                     keyboardType: TextInputType.number,
+                    contentpadding: EdgeInsets.only(
+                      left: 12.w,
+                      right: 12.w,
+                      top: 18.h,
+                      bottom: 18.h,
+                    ),
                   ),
                   SizedBox(height: 16.h),
                   Text(
@@ -119,6 +126,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomFormField(
                     hintText: "Enter your password",
                     maxLines: 1,
+                    contentpadding: EdgeInsets.only(
+                      left: 12.w,
+                      right: 12.w,
+                      top: 18.h,
+                      bottom: 18.h,
+                    ),
+
                     suffixIcon: IconButton(
                       icon: Icon(
                         Icons.visibility_off_outlined,

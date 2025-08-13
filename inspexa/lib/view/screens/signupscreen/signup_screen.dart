@@ -19,7 +19,7 @@ class _TwoStepFormState extends State<SignupScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _turns = -0.13;
+        _turns = -0.12;
       });
     });
   }
@@ -31,7 +31,8 @@ class _TwoStepFormState extends State<SignupScreen> {
       body: Stack(
         children: [
           Positioned(
-            top: 570.h,
+            left: 0,
+            bottom: -20,
             child: AnimatedRotation(
               turns: _turns,
               duration: const Duration(milliseconds: 500),
@@ -48,7 +49,7 @@ class _TwoStepFormState extends State<SignupScreen> {
             ),
           ),
           Positioned(
-            top: 530.h,
+            bottom: 76.h,
             right: 0,
             child: AnimatedRotation(
               turns: _turns,
@@ -236,6 +237,12 @@ class _TwoStepFormState extends State<SignupScreen> {
           maxLines: 1,
           maxLength: 10,
           keyboardType: TextInputType.number,
+          contentpadding: EdgeInsets.only(
+            left: 12.w,
+            right: 12.w,
+            top: 18.h,
+            bottom: 18.h,
+          ),
         ),
         SizedBox(height: 16.h),
         Text(
@@ -252,6 +259,12 @@ class _TwoStepFormState extends State<SignupScreen> {
 
           maxLines: 1,
           maxLength: 10,
+          contentpadding: EdgeInsets.only(
+            left: 12.w,
+            right: 12.w,
+            top: 18.h,
+            bottom: 18.h,
+          ),
           keyboardType: TextInputType.number,
         ),
         SizedBox(height: 16.h),
@@ -270,6 +283,12 @@ class _TwoStepFormState extends State<SignupScreen> {
           maxLines: 1,
           maxLength: 10,
           keyboardType: TextInputType.number,
+          contentpadding: EdgeInsets.only(
+            left: 12.w,
+            right: 12.w,
+            top: 18.h,
+            bottom: 18.h,
+          ),
         ),
         SizedBox(height: 16.h),
         Text(
@@ -287,6 +306,12 @@ class _TwoStepFormState extends State<SignupScreen> {
           maxLines: 1,
           maxLength: 10,
           keyboardType: TextInputType.number,
+          contentpadding: EdgeInsets.only(
+            left: 12.w,
+            right: 12.w,
+            top: 18.h,
+            bottom: 18.h,
+          ),
         ),
 
         SizedBox(height: 21.h),
@@ -383,6 +408,12 @@ class _TwoStepFormState extends State<SignupScreen> {
           maxLines: 1,
           maxLength: 10,
           keyboardType: TextInputType.number,
+          contentpadding: EdgeInsets.only(
+            left: 12.w,
+            right: 12.w,
+            top: 18.h,
+            bottom: 18.h,
+          ),
         ),
         SizedBox(height: 3.h),
         Row(
@@ -410,6 +441,12 @@ class _TwoStepFormState extends State<SignupScreen> {
         CustomFormField(
           hintText: "Enter your password",
           maxLines: 1,
+          contentpadding: EdgeInsets.only(
+            left: 12.w,
+            right: 12.w,
+            top: 18.h,
+            bottom: 18.h,
+          ),
           suffixIcon: IconButton(
             icon: Icon(
               Icons.visibility_off_outlined,
@@ -432,6 +469,12 @@ class _TwoStepFormState extends State<SignupScreen> {
         CustomFormField(
           hintText: "Enter your confirm password",
           maxLines: 1,
+          contentpadding: EdgeInsets.only(
+            left: 12.w,
+            right: 12.w,
+            top: 18.h,
+            bottom: 18.h,
+          ),
           suffixIcon: IconButton(
             icon: Icon(
               Icons.visibility_off_outlined,

@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsetsGeometry.symmetric(horizontal: 21.w),
+            padding: EdgeInsets.symmetric(horizontal: 21.w),
             child: Column(
               children: [
                 SizedBox(height: 52.h),
@@ -108,11 +108,17 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                       ),
                                       SizedBox(height: 5.h),
-                                      CustomshowFormField(
+                                      CustomFormField(
                                         hintText: "Ex: KA07AB1234",
 
                                         maxLines: 1,
                                         maxLength: 10,
+                                        contentpadding: EdgeInsets.only(
+                                          left: 12.w,
+                                          right: 12.w,
+                                          top: 8.h,
+                                          bottom: 8.h,
+                                        ),
                                       ),
                                       SizedBox(height: 12.h),
                                       Text(
@@ -124,9 +130,15 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                       ),
                                       SizedBox(height: 5.h),
-                                      CustomshowFormField(
+                                      CustomFormField(
                                         hintText: "Enter Name",
                                         maxLines: 1,
+                                        contentpadding: EdgeInsets.only(
+                                          left: 12.w,
+                                          right: 12.w,
+                                          top: 8.h,
+                                          bottom: 8.h,
+                                        ),
                                       ),
                                       SizedBox(height: 14.h),
 
