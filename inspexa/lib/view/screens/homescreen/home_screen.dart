@@ -87,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   child: Align(
                                     alignment: Alignment.topRight,
-                                    child: Icon(Icons.cancel_outlined),
+                                    child: Icon(Icons.clear),
                                   ),
                                 ),
                                 Padding(
@@ -143,27 +143,15 @@ class HomeScreen extends StatelessWidget {
                                       SizedBox(height: 14.h),
 
                                       Center(
-                                        child: GestureDetector(
+                                        child: PrimaryButton(
                                           onTap: () {},
-                                          child: Container(
-                                            height: 30.h,
-                                            width: 75.w,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFF9D781C),
-                                              borderRadius:
-                                                  BorderRadius.circular(5.r),
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                'Next',
-                                                style: TextStyle(
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Color(0xFFFFFFFF),
-                                                ),
-                                              ),
-                                            ),
+                                          height: 30.h,
+                                          width: 75.w,
+                                          borderRadius: BorderRadius.circular(
+                                            5.r,
                                           ),
+                                          fontSize: 12.sp,
+                                          text: 'Next',
                                         ),
                                       ),
                                     ],
@@ -202,8 +190,7 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsetsGeometry.symmetric(horizontal: 7.w),
                   child: DottedBorder(
                     borderType: BorderType.RRect,
-                    radius: Radius.circular(5.h),
-                    padding: EdgeInsets.symmetric(vertical: 8.h),
+                    padding: EdgeInsets.only(top: 8.h),
 
                     color: Colors.black,
 
@@ -305,7 +292,7 @@ class HomeScreen extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5.r),
             image: DecorationImage(
-              opacity: 0.8,
+              opacity: 0.6,
               fit: BoxFit.cover,
               image: ExactAssetImage(imageText),
             ),

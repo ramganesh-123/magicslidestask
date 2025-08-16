@@ -18,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _turns = 0.13;
+        _turns = 0.12;
       });
     });
   }
@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           Positioned(
@@ -221,28 +221,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   SizedBox(height: 40.h),
-                  GestureDetector(
+                  PrimaryButton(
                     onTap: () {
                       Navigator.of(context).pushNamed('/dashboardscreen');
                     },
-                    child: Container(
-                      height: 48.h,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF9D781C),
-                        borderRadius: BorderRadius.circular(100.r),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Sign in',
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ),
-                      ),
-                    ),
+                    text: 'Sign in',
                   ),
+
                   SizedBox(height: 40.h),
                   Center(
                     child: Text.rich(

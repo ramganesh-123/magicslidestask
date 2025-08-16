@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomFormField extends StatelessWidget {
-  const CustomFormField({
+  CustomFormField({
     super.key,
     this.hintText,
     this.onChanged,
@@ -26,29 +26,33 @@ class CustomFormField extends StatelessWidget {
     this.obscureText,
     this.suffixIcon,
     this.contentpadding,
+    this.readOnly = false,
+    this.style,
   });
 
   final String? hintText;
-  final void Function(String value)? onChanged;
-  final void Function()? onTap;
-  final void Function()? onEditingComplete;
-  final void Function(String value)? onFieldSubmitted;
-  final void Function(String? value)? onSaved;
-  final List<TextInputFormatter>? inputFormatters;
-  final String? Function(String? value)? validator;
-  final TextStyle? hintStyle;
-  final TextInputType? keyboardType;
-  final int? maxLines;
-  final int? maxLength;
-  final double? radius;
-  final bool? obscureText;
-  final Widget? suffixIcon;
-  final Widget? prefixIconWidget;
-  final VoidCallback? prefixCallback;
-  final TextInputAction? textInputAction;
-  final TextCapitalization? textCapitalization;
-  final TextEditingController? controller;
-  final EdgeInsets? contentpadding;
+  bool readOnly;
+  void Function(String value)? onChanged;
+  void Function()? onTap;
+  void Function()? onEditingComplete;
+  void Function(String value)? onFieldSubmitted;
+  void Function(String? value)? onSaved;
+  List<TextInputFormatter>? inputFormatters;
+  String? Function(String? value)? validator;
+  TextStyle? hintStyle;
+  TextInputType? keyboardType;
+  int? maxLines;
+  int? maxLength;
+  double? radius;
+  bool? obscureText;
+  Widget? suffixIcon;
+  Widget? prefixIconWidget;
+  VoidCallback? prefixCallback;
+  TextInputAction? textInputAction;
+  TextCapitalization? textCapitalization;
+  TextEditingController? controller;
+  EdgeInsets? contentpadding;
+  TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +75,8 @@ class CustomFormField extends StatelessWidget {
       textCapitalization: textCapitalization ?? TextCapitalization.none,
       validator: validator,
       onSaved: onSaved,
+      readOnly: readOnly,
+      style: style,
       obscureText: obscureText ?? false,
       decoration: InputDecoration(
         focusColor: Color(0xFFC4C4C4),
@@ -91,6 +97,62 @@ class CustomFormField extends StatelessWidget {
               color: Color(0xFFC4C4C4),
             ),
         hintText: hintText,
+      ),
+    );
+  }
+}
+
+class PrimaryButton extends StatelessWidget {
+  PrimaryButton({
+    super.key,
+    this.onTap,
+    this.height,
+    this.width,
+    this.borderRadius,
+    this.decationcolor,
+    this.fontSize,
+    this.fontWeight,
+    this.text,
+    this.textcolor,
+    this.border,
+    this.fontFamily,
+  });
+
+  void Function()? onTap;
+  double? height;
+  double? width;
+  String? text;
+  BorderRadiusGeometry? borderRadius;
+  double? fontSize;
+  FontWeight? fontWeight;
+  Color? decationcolor;
+  Color? textcolor;
+  BoxBorder? border;
+  String? fontFamily;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: height ?? 48.h,
+        width: width ?? double.infinity,
+        decoration: BoxDecoration(
+          color: decationcolor ?? Color(0xFF9D781C),
+          borderRadius: borderRadius ?? BorderRadius.circular(100.r),
+          border: border,
+        ),
+        child: Center(
+          child: Text(
+            text ?? '',
+            style: TextStyle(
+              fontSize: fontSize ?? 14.sp,
+              fontWeight: fontWeight ?? FontWeight.w600,
+              color: textcolor ?? Color(0xFFFFFFFF),
+              fontFamily: fontFamily ?? 'Manrope',
+            ),
+          ),
+        ),
       ),
     );
   }

@@ -77,7 +77,7 @@ class _TwoStepFormState extends State<SignupScreen> {
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        if (processIndex == 1)
+                        if (processIndex == 0)
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Row(
@@ -188,8 +188,8 @@ class _TwoStepFormState extends State<SignupScreen> {
                     ),
                   ),
 
-                  if (processIndex == 0) fillDetails(context),
-                  if (processIndex == 1) buildSignup(context),
+                  if (processIndex == 1) fillDetails(context),
+                  if (processIndex == 0) buildSignup(context),
                   SizedBox(height: 100.h),
                 ],
               ),
@@ -315,30 +315,16 @@ class _TwoStepFormState extends State<SignupScreen> {
         ),
 
         SizedBox(height: 21.h),
-        GestureDetector(
+        PrimaryButton(
           onTap: () {
             setState(() {
-              processIndex = 1;
+              processIndex = 0;
             });
           },
-          child: Container(
-            height: 48.h,
-            decoration: BoxDecoration(
-              color: Color(0xFF9D781C),
-              borderRadius: BorderRadius.circular(100.r),
-            ),
-            child: Center(
-              child: Text(
-                'Next',
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFFFFFFFF),
-                ),
-              ),
-            ),
-          ),
+
+          text: 'Next',
         ),
+
         SizedBox(height: 40.h),
         Center(
           child: Text.rich(
@@ -545,26 +531,35 @@ class _TwoStepFormState extends State<SignupScreen> {
           ],
         ),
         SizedBox(height: 40.h),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            height: 48.h,
-            decoration: BoxDecoration(
-              color: Color(0xFF9D781C),
-              borderRadius: BorderRadius.circular(100.r),
-            ),
-            child: Center(
-              child: Text(
-                'Sign up',
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFFFFFFFF),
-                ),
-              ),
-            ),
-          ),
+        PrimaryButton(
+          onTap: () {
+            setState(() {
+              processIndex = 1;
+            });
+          },
+
+          text: 'Sign up',
         ),
+        // GestureDetector(
+        //   onTap: () {},
+        //   child: Container(
+        //     height: 48.h,
+        //     decoration: BoxDecoration(
+        //       color: Color(0xFF9D781C),
+        //       borderRadius: BorderRadius.circular(100.r),
+        //     ),
+        //     child: Center(
+        //       child: Text(
+        //         'Sign up',
+        //         style: TextStyle(
+        //           fontSize: 14.sp,
+        //           fontWeight: FontWeight.w600,
+        //           color: Color(0xFFFFFFFF),
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ),
         SizedBox(height: 40.h),
         Center(
           child: Text.rich(
