@@ -145,4 +145,4 @@ Local storage is used to maintain login sessions so users don't need to login ev
 **Development Environment**: Flutter, Android Studio
 **State Management**: GetX
 **Backend**: Supabase
-**API Integration**: MagicSlides API
+**API Integration**: MagicSlides API"# magicslidestask" 
